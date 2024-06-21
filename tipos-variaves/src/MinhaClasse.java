@@ -1,7 +1,12 @@
 public class MinhaClasse {
 
-public static void main(String[] args) throws Exception {
+public static void main(String[] args){
 
-    System.err.println("Oi, foi executado no terminal");
+    System.out.println("Oi, foi executado no terminal");
+
+
+
+
+
 }
 }
