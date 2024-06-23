@@ -1,34 +1,32 @@
-public class SimulacaoConta {
-
-    import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class VerificadorNumeroConta {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         try {
-            String numeroConta = scanner.nextLine();
+            String numeroConta = br.readLine().trim();
 
-            // TODO: Chamar o método que veritica se o número da conta é valido
+            verificarNumeroConta(numeroConta);
             
             // Caso nenhuma exceção seja lançada, imprime a mensagem de sucesso.
             System.out.println("Numero de conta valido.");
         } catch (IllegalArgumentException e) {
-            // TODO: Informar que o número de conta é inválido e exibir a mensagem de erro
+            // Informar que o número de conta é inválido e exibir a mensagem de erro
             System.out.println("Erro: " + e.getMessage());
-        } finally {
-            // Fechar o scanner para evitar vazamentos de recursos
-            scanner.close();
+        } catch (IOException e) {
+            // Capturar possíveis exceções de IO
+            System.out.println("Erro de leitura.");
         }
     }
 
     private static void verificarNumeroConta(String numeroConta) {
         if (numeroConta.length() != 8) {
-            // TODO: Lançar uma IllegalArgumentException com a seguinte mensagem:
-            // "Numero de conta invalido. Digite exatamente 8 digitos."
+            // Lançar uma IllegalArgumentException com a mensagem de erro apropriada
+            throw new IllegalArgumentException("Numero de conta invalido. Digite exatamente 8 digitos.");
         }
     }
-}
-    
 }
