@@ -6,7 +6,7 @@ public class VerificadorNumeroConta {
 
     public static void main(String[] args) {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
+        
         try {
             String numeroConta = br.readLine().trim();
 
@@ -30,3 +30,5 @@ public class VerificadorNumeroConta {
         }
     }
 }
+
+
